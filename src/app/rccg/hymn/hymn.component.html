@@ -1,0 +1,28 @@
+<main class="container-fluid">
+    <div>
+        <h2>{{ hymn.hymnNo }}. {{ hymn.title }}</h2>
+        <h5 class="container">
+            <span>{{ hymn.category }}</span><br>
+            <span>{{ hymn.metre }}</span><br>
+    
+            <span class="bible-reference">
+                {{ hymn.bibleReferenceQ }} : {{ hymn.bibleReference }}
+            </span>
+        </h5>
+    
+        <h5 *ngFor="let stanzards of hymn.hymnStanzards; let index=index">
+                <span *ngFor="let lines of stanzards" (click)="logme(index)">
+                        {{ lines }} <br>
+                </span> <br>
+                <span *ngIf="hymn.hymnChorus">
+                        <span class="chorus" *ngFor="let lines of hymn.hymnChorus[index+1]">
+                            {{ lines }} <br>
+                        </span> <br>
+                    </span>
+        </h5>
+        <audio *ngIf="hymn.hymnToneUrl" controls>
+            <source  [src]=hymn.hymnToneUrl>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</main>

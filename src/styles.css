@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    min-width: 350px;
+    background-image: url(./assets/images/rccg-bg-img.png);
+    background-position: center;
+    color: #110505;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+/* Main content */
+main {
+    min-width: 350px;
+    margin-top: 38px; /* Add a top margin to avoid content overlay*/
+    background-color: rgba(59, 59, 59, 0.95);
+    color: #e4dada;
+    padding-top: 30px;
+    min-height: 600px;
+}
+
+main>div{
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width:767px){
+    main>div{
+        width:95%;
+    }
+}
+
+@media (min-width:768px){
+    main{
+        margin-top: 58px; /*accounts for the increase in height at fullscreen */
+    }
+    
+    p{
+        font-size: 1.5em;
+    }
+}
+
+h1,h2{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+h1{
+    font-weight: bold;
+}
+h2{
+    font-weight: 600;
+}

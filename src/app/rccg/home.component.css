@@ -1,0 +1,23 @@
+.container {
+    margin-top: 20px;
+}
+h2 {
+    
+    text-align: center
+}
+.card {
+    min-height: 150px;
+    border-radius: 10px;
+    background-color: rgba(117, 115, 115, 0.2);
+    color: #e4dada;
+    
+}
+.card:hover{
+    
+    background-color: rgba(99, 99, 99, 0.6);
+    color: #e4dada;
+    
+}
+h4{
+    text-align:center
+}

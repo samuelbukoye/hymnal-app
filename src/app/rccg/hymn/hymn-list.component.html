@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<main class="container-fluid">
+    <div>
+        <h1>RCCG Hymnals</h1>
+        <label class="filter" for="searchHymn">
+        
+        </label>
+        <input id="searchHymn" 
+            class="form-control" type="text"
+            placeholder="&#xF0b0; Filter(number, name, metre, bible quote...)" 
+            [(ngModel)]='hymnListFilter'>
+        <p>{{hymnListFilter ? 'Filtered By '+hymnListFilter : '' }}</p>
+
+        <button class="btn btn-danger" (click)="categorySwitcher()">
+            <span>
+                <span *ngIf='category'>&#xf249;</span>
+                <span *ngIf='!category'>&#xf07c;</span>
+                {{category?'No Sorting':'Sort By Category'}}
+           </span>
+            </button>
+        
+        <button class="btn btn-primary grid" (click)="gridSwitcher()">
+            <span>
+                 <span *ngIf='grid'>&#xf00b;</span>
+                 <span *ngIf='!grid'>&#xf00a;</span>
+                {{grid?'List':'Grid'}} View
+            </span>
+        </button>
+
+        <div class="list">
+            <hymn-category-view *ngIf='category' [hymns]="filteredHymns" [grid]="grid"></hymn-category-view>
+            <hymn-default-view *ngIf='!category' [hymns]="filteredHymns" [grid]="grid"></hymn-default-view>
+        </div>
+    </div>
+    
+</main>

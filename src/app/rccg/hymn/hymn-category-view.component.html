@@ -1,0 +1,16 @@
+<div>
+    <div *ngFor="let division of hymnCategories">
+        <h4  (click)="toggleDivision(division.category)">
+            <span *ngIf="division.hidden">
+                <fa-icon [icon]='faAngleDoubleDown'></fa-icon>
+            </span>
+            <span *ngIf="!division.hidden">
+                <fa-icon [icon]='faAngleDoubleUp'></fa-icon>
+            </span>
+            {{ division.category }}
+        </h4>
+        <div *ngIf="!division.hidden">
+            <hymn-thumbnail [hymns]="division.hymns" [grid]="grid"></hymn-thumbnail>
+        </div>
+    </div>
+</div>
