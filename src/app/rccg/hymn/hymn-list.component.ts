@@ -47,7 +47,7 @@ export class HymnListComponent implements OnInit {
 
   performFilter(filterBy: string){
     filterBy = filterBy.toLowerCase()
-
+    
     const hymnChecker=hymn=>{
       return(hymn.some(verse=>{
         return(verse.some(line=>{
@@ -62,5 +62,4 @@ export class HymnListComponent implements OnInit {
         )
       )
   }
-  
 }

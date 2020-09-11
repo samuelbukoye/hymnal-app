@@ -11,5 +11,4 @@ import { Component, Input } from '@angular/core';
 export class HymnDefaultViewComponent {
   @Input() hymns:any[];
   @Input() grid: boolean
-
 }

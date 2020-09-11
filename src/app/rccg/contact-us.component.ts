@@ -5,11 +5,6 @@ import { Component } from '@angular/core';
   styles: [`
     
 `]
-//   styles: [`
-//     header{
-//         text-align: center
-//     }
-// `]
 })
 
 export class ContactUsComponent {

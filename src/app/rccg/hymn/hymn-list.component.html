@@ -1,10 +1,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<main class="container-fluid">
-    <div>
+
+<div>
+    <div class="header">
         <h1>RCCG Hymnals</h1>
-        <label class="filter" for="searchHymn">
-        
-        </label>
         <input id="searchHymn" 
             class="form-control" type="text"
             placeholder="&#xF0b0; Filter(number, name, metre, bible quote...)" 
@@ -16,21 +14,20 @@
                 <span *ngIf='category'>&#xf249;</span>
                 <span *ngIf='!category'>&#xf07c;</span>
                 {{category?'No Sorting':'Sort By Category'}}
-           </span>
+            </span>
             </button>
         
         <button class="btn btn-primary grid" (click)="gridSwitcher()">
             <span>
-                 <span *ngIf='grid'>&#xf00b;</span>
-                 <span *ngIf='!grid'>&#xf00a;</span>
+                    <span *ngIf='grid'>&#xf00b;</span>
+                    <span *ngIf='!grid'>&#xf00a;</span>
                 {{grid?'List':'Grid'}} View
             </span>
         </button>
-
-        <div class="list">
-            <hymn-category-view *ngIf='category' [hymns]="filteredHymns" [grid]="grid"></hymn-category-view>
-            <hymn-default-view *ngIf='!category' [hymns]="filteredHymns" [grid]="grid"></hymn-default-view>
-        </div>
     </div>
-    
-</main>
+
+    <div class="list">
+        <hymn-category-view *ngIf='category' [hymns]="filteredHymns" [grid]="grid"></hymn-category-view>
+        <hymn-default-view *ngIf='!category' [hymns]="filteredHymns" [grid]="grid"></hymn-default-view>
+    </div>
+</div>

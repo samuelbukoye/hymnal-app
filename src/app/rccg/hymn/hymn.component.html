@@ -1,28 +1,43 @@
-<main class="container-fluid">
-    <div>
+<div class="main-div">
+    <div class="title">
         <h2>{{ hymn.hymnNo }}. {{ hymn.title }}</h2>
-        <h5 class="container">
-            <span>{{ hymn.category }}</span><br>
-            <span>{{ hymn.metre }}</span><br>
+        <span>Category : {{ hymn.category }}</span><br>
+        <span>Metre : {{ hymn.metre }}</span><br>
+
+        <span class="bible-reference">
+            {{ hymn.bibleReference }} : 
+            {{ hymn.bibleReferenceQ }}
+        </span>
+    </div>
     
-            <span class="bible-reference">
-                {{ hymn.bibleReferenceQ }} : {{ hymn.bibleReference }}
-            </span>
-        </h5>
-    
-        <h5 *ngFor="let stanzards of hymn.hymnStanzards; let index=index">
-                <span *ngFor="let lines of stanzards" (click)="logme(index)">
-                        {{ lines }} <br>
+
+    <h5>
+        <div *ngFor="let stanzards of hymn.hymnStanzards; let index=index">
+            <span>{{ index+1 }}. </span><span *ngFor="let lines of stanzards">
+                    {{ lines }} <br>
+            </span> <br>
+            <span *ngIf="hymn.hymnChorus">
+                <span class="chorus" *ngFor="let lines of hymn.hymnChorus[index+1]">
+                    {{ lines }} <br>
                 </span> <br>
-                <span *ngIf="hymn.hymnChorus">
-                        <span class="chorus" *ngFor="let lines of hymn.hymnChorus[index+1]">
-                            {{ lines }} <br>
-                        </span> <br>
-                    </span>
-        </h5>
-        <audio *ngIf="hymn.hymnToneUrl" controls>
+            </span>
+        </div>
+    </h5>
+    <audio *ngIf="hymn.hymnToneUrl" controls>
+        <source  [src]=hymn.hymnToneUrl>
+        Your browser does not support the audio element.
+    </audio>
+    <!-- <div *ngIf="hymn.hymnToneUrl">
+        <audio id = "player" controls>
             <source  [src]=hymn.hymnToneUrl>
             Your browser does not support the audio element.
         </audio>
-    </div>
-</main>
+            <div>
+                <button onclick = "document.getElementById('player').play()">Play</button>
+                <button onclick = "document.getElementById('player').pause()">Pause</button>
+                <button onclick = "document.getElementById('player').volume += 0.2">Vol+</button>
+                <button onclick = "document.getElementById('player').volume -= 0.2">Vol-</button>
+            </div>
+    </div> -->
+    
+</div>

@@ -4,21 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'hymn',
-  templateUrl: "hymn.component.html",
-  styles: [`
-    .chorus{
-      margin-left:20px;
-    }
-`]
-//   styles: [`
-//   header{
-//     margin-left: 10px
-//   }
-//     main{
-//       margin-top: 30px;
-//       margin-left: 50px
-//     }
-// `]
+  templateUrl: "./hymn.component.html",
+  styleUrls: ['./hymn.component.css']
+    
 })
 
 export class HymnComponent implements OnInit {
@@ -34,10 +22,4 @@ ngOnInit(){
     this.hymn = this.hymnService.getHymn(+this.route.snapshot.params['hymn'])
     
   }
-
-  logme(text){
-    console.log("hihi")
-    console.log(text)
-  }
-  
 }

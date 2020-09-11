@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+html,body{
+    height: 100%;
+}
 body{
     min-width: 350px;
     background-image: url(./assets/images/rccg-bg-img.png);
@@ -8,12 +11,11 @@ body{
 }
 /* Main content */
 main {
-    min-width: 350px;
+    min-height: 100%;
     margin-top: 38px; /* Add a top margin to avoid content overlay*/
-    background-color: rgba(59, 59, 59, 0.95);
+    background-color: rgba(83, 79, 79, 0.92);
     color: #e4dada;
     padding-top: 30px;
-    min-height: 600px;
 }
 
 main>div{
