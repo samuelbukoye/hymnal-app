@@ -2,22 +2,21 @@
     margin-top: 20px;
 }
 h2 {
-    
+    padding: 5px;
     text-align: center
 }
 .card {
+    padding: 2px;
     min-height: 150px;
     border-radius: 10px;
-    background-color: rgba(117, 115, 115, 0.2);
-    color: #e4dada;
+    background-color: rgba(126, 131, 131, 0.2);
+    color: inherit;
     
 }
 .card:hover{
-    
-    background-color: rgba(99, 99, 99, 0.6);
-    color: #e4dada;
-    
+    color:#ebebeb;
+    background-color:#4e5d6c;
 }
-h4{
+p{
     text-align:center
 }

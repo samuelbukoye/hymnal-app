@@ -22,8 +22,8 @@ export class HymnListComponent implements OnInit {
     this.filteredHymns=this.hymns
     
   }
-    grid:boolean = false 
-  category:boolean = false
+  grid:boolean = false 
+  category:boolean = true
   private _hymnListFilter:string
 
   get hymnListFilter():string{

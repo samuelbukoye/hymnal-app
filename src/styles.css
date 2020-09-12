@@ -2,19 +2,17 @@
 html,body{
     height: 100%;
 }
+
 body{
     min-width: 350px;
-    background-image: url(./assets/images/rccg-bg-img.png);
-    background-position: center;
-    color: #110505;
+    background-color: #001f;
+    color: #faf9f9;
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
 }
 /* Main content */
 main {
     min-height: 100%;
     margin-top: 38px; /* Add a top margin to avoid content overlay*/
-    background-color: rgba(83, 79, 79, 0.92);
-    color: #e4dada;
     padding-top: 30px;
 }
 

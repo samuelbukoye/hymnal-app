@@ -1,10 +1,10 @@
 h4 {
     text-transform: uppercase;
     font-weight: bold;
-    border-bottom: 3px solid grey;
+    border-bottom: 1px solid #808080;
 }
 
 h4:hover{
-    color: rgb(228, 224, 224);
-    border-color: rgb(228, 224, 224);
+    border-color: #e4e0e0;
+    font-size: 20px;    /* bootstrap's 19px plus 1 */
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HymnService } from './shared/hymn.service';
+import { HymnService } from '../shared/hymn.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

@@ -1,28 +1,30 @@
 .list-template{
-    border-bottom: 1px solid grey;
+    color: inherit;
+    border-bottom: 1px solid #808080;
 }
 .list-template:hover{
-    color: rgb(228, 224, 224);
-    border-color: rgb(228, 224, 224);
+    border-color: #e4e0e0;
+    font-size: 1.01em;
 }
 .grid-template{
     display:inline-block;
-    background-color: rgba(117, 115, 115, 0.2);
-    color: #e4dada;
     width: 40px;
     height: 40px;
-    border: 1px solid grey;
     margin: 1px;
     padding-top: 6px;
     text-align:center;
+    background-color: #75737333;
+    color: inherit;
+    border: 1px solid #808080;
 }
 .grid-template:hover{
-    color: rgb(228, 224, 224);
-    border-color: rgb(228, 224, 224);
+    border-color: #e4e0e0;
+    color:#ebebeb;
+    background-color:#4e5d6c;
 }
 h4 {
     text-transform: capitalize;
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid #808080;
 }
 h4:hover{
     color: rgba(143, 140, 140, 0.8);

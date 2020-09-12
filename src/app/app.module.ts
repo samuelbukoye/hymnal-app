@@ -12,11 +12,11 @@ import { ContactUsComponent } from './rccg/contact-us.component'
 import { AboutHymnComponent } from './rccg/about-hymn.component'
 import { RccgComponent } from './rccg/rccg.component'
 import { HymnThumbnailComponent } from './rccg/hymn/hymn-thumbnail.component'
-import { HymnListComponent } from './rccg/hymn/hymn-list.component'
+import { HymnListComponent } from './rccg/hymn-list.component'
 import { HymnDefaultViewComponent } from './rccg/hymn/hymn-default-view.component'
 import { HymnCategoryViewComponent } from './rccg/hymn/hymn-category-view.component'
 import { appRoutes } from './routes'
-import { HymnService } from './rccg/hymn/shared/hymn.service';
+import { HymnService } from './rccg/shared/hymn.service';
 import { HymnComponent } from './rccg/hymn/hymn.component'
 
 @NgModule({

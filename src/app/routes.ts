@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router'
-import { HymnListComponent } from './rccg/hymn/hymn-list.component'
+import { HymnListComponent } from './rccg/hymn-list.component'
 import { HomeComponent } from './rccg/home.component'
 import { ContactUsComponent } from './rccg/contact-us.component'
 import { AboutHymnComponent } from './rccg/about-hymn.component'
