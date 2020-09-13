@@ -23,6 +23,8 @@
             </span>
         </div>
     </h5>
+    <hymn-change [direction]="'left'"></hymn-change>
+    <hymn-change [direction]="'right'"></hymn-change>
     <audio *ngIf="hymn.hymnToneUrl" controls>
         <source  [src]=hymn.hymnToneUrl>
         Your browser does not support the audio element.

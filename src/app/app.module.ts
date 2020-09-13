@@ -4,7 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router'
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
- 
+
+import { appRoutes } from './routes'
+import { HymnService } from './rccg/shared/hymn.service';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './rccg/navbar.component'
 import { HomeComponent } from './rccg/home.component'
@@ -15,9 +18,8 @@ import { HymnThumbnailComponent } from './rccg/hymn/hymn-thumbnail.component'
 import { HymnListComponent } from './rccg/hymn-list.component'
 import { HymnDefaultViewComponent } from './rccg/hymn/hymn-default-view.component'
 import { HymnCategoryViewComponent } from './rccg/hymn/hymn-category-view.component'
-import { appRoutes } from './routes'
-import { HymnService } from './rccg/shared/hymn.service';
 import { HymnComponent } from './rccg/hymn/hymn.component'
+import { HymnChangeComponent } from './rccg/hymn/hymn-change.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { HymnComponent } from './rccg/hymn/hymn.component'
     AboutHymnComponent,
     ContactUsComponent,
     RccgComponent,
-    NavbarComponent
+    NavbarComponent,
+    HymnChangeComponent
   ],
   imports: [
     BrowserModule,

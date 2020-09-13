@@ -23,7 +23,7 @@ export class HymnListComponent implements OnInit {
     
   }
   grid:boolean = false 
-  category:boolean = true
+  category:boolean = false
   private _hymnListFilter:string
 
   get hymnListFilter():string{

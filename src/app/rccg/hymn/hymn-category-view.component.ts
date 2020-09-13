@@ -7,7 +7,7 @@ import { faAngleDoubleDown,faAngleDoubleUp } from '@fortawesome/free-solid-svg-i
   styleUrls: [`hymn-category-view.css`]
 })
 
-export class HymnCategoryViewComponent {
+export class HymnCategoryViewComponent implements OnInit {
   @Input() hymns:any[];
   @Input() grid: boolean
 
