@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HymnService } from '../shared/hymn.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -9,17 +9,17 @@ import { ActivatedRoute } from '@angular/router';
     
 })
 
-export class HymnComponent implements OnInit {
+export class HymnComponent {
 
 hymn
 constructor(
     private hymnService : HymnService,
     private route : ActivatedRoute
     ){
+        this.route.params.subscribe(val=> {
+        this.hymn = this.hymnService.getHymn(+val['hymn'])
+
+      })
 
 }
-ngOnInit(){
-    this.hymn = this.hymnService.getHymn(+this.route.snapshot.params['hymn'])
-    
-  }
 }
