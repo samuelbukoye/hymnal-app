@@ -1,24 +1,25 @@
 <div class="main-div">
     <div class="title">
         <h2>{{ hymn.hymnNo }}. {{ hymn.title }}</h2>
-        <span>Category : {{ hymn.category }}</span><br>
-        <span>Metre : {{ hymn.metre }}</span><br>
+        <span>Category : {{ hymn.category | firstLetterToUppercase }}</span><br>
+        <span>Metre : {{ hymn.metre | uppercase}}</span><br>
 
         <span class="bible-reference">
-            {{ hymn.bibleReference }} : 
-            {{ hymn.bibleReferenceQ }}
+            {{ hymn.bibleReference | firstLetterToUppercase }}
+             : 
+            {{ hymn.bibleReferenceQ | firstLetterToUppercase }}
         </span>
     </div>
     
-
     <h5>
         <div *ngFor="let stanzards of hymn.hymnStanzards; let index=index">
-            <span>{{ index+1 }}. </span><span *ngFor="let lines of stanzards">
-                    {{ lines }} <br>
+            <span>{{ index+1 }}. </span>
+            <span *ngFor="let lines of stanzards">
+                    {{ lines | firstLetterToUppercase }} <br>
             </span> <br>
             <span *ngIf="hymn.hymnChorus">
                 <span class="chorus" *ngFor="let lines of hymn.hymnChorus[index+1]">
-                    {{ lines }} <br>
+                    {{ lines | firstLetterToUppercase }} <br>
                 </span> <br>
             </span>
         </div>

@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { appRoutes } from './routes'
 import { HymnService } from './rccg/shared/hymn.service';
+import { FirstLetterToUppercasePipe } from './rccg/shared/first-letter-to-uppercase.pipe';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './rccg/navbar.component'
@@ -23,6 +24,8 @@ import { HymnChangeComponent } from './rccg/hymn/hymn-change.component'
 
 @NgModule({
   declarations: [
+    FirstLetterToUppercasePipe,
+
     AppComponent,
     HomeComponent,
     HymnThumbnailComponent,
@@ -34,7 +37,7 @@ import { HymnChangeComponent } from './rccg/hymn/hymn-change.component'
     ContactUsComponent,
     RccgComponent,
     NavbarComponent,
-    HymnChangeComponent
+    HymnChangeComponent,
   ],
   imports: [
     BrowserModule,

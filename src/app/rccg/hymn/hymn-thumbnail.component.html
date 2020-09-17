@@ -1,8 +1,8 @@
 <div class="container template-list" *ngIf='hymns'>    
     <div *ngIf='!grid'>
         <div [routerLink]="['/hymns',hymn.hymnNo]" class="card template list-template" *ngFor='let hymn of hymns' data-toggle="collapse" data-target=".navbar-collapse.show">
-            <p class="card-title">{{hymn.hymnNo}}. {{hymn.title}}</p>
-            <p class="container card-content">{{hymn.hymnStanzards[0][0]}}</p>
+            <p class="card-title">{{hymn.hymnNo}}. {{hymn.title | firstLetterToUppercase }}</p>
+            <p class="container card-content">{{hymn.hymnStanzards[0][0] | firstLetterToUppercase}}</p>
         </div>
     </div>
     <div *ngIf='grid'>
