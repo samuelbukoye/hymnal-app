@@ -1,6 +1,6 @@
-<div [routerLink]="['/hymns',hymnNo-1]" *ngIf="(direction==='left') && !isFirst" class="left">
+<div [routerLink]="['/hymns',hymnNo-1]" *ngIf="(direction==='left') && !isFirst" class="left" data-toggle="collapse" data-target=".navbar-collapse.show">
     <fa-icon *ngIf="direction==='left'" [icon]='faArrowLeft'></fa-icon>
 </div>
-<div [routerLink]="['/hymns',hymnNo+1]" *ngIf="(direction==='right') && !isLast" class="right">
+<div [routerLink]="['/hymns',hymnNo+1]" *ngIf="(direction==='right') && !isLast" class="right" data-toggle="collapse" data-target=".navbar-collapse.show">
     <fa-icon [icon]='faArrowRight'></fa-icon>
 </div>
