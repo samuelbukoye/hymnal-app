@@ -1,6 +1,6 @@
 nav{
-    color: #ebebeb;
-    background-color: blue;
+    color: #111111;
+    background-color: white;
     font-weight: 500;
     width: 100%;
     padding-right: 5px;
@@ -8,7 +8,7 @@ nav{
 }
 .navbar-brand{
     font-family: 'Limelight','Stencil Regular', Verdana,sans-serif;
-    color: rgb(164, 189, 53);
+    color: #111111;
     padding: 2px;
 }
 .navbar-brand span{
@@ -31,7 +31,6 @@ nav img{
     margin-right:5px
 }
 .navbar-toggler{
-    /* font-size: 1.4em; */
     float:right;
 }
 @media (min-width:768px){
@@ -81,6 +80,7 @@ nav li a.active{
       width: 60%;
       visibility: hidden;
       background-color: rgba(16, 16, 29, 0.9);
+      color: #faf9f9;
       transition: visibility .2s ease-in-out, -webkit-transform .2s ease-in-out;
       max-height: 100%;
     }
