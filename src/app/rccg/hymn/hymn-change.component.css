@@ -1,5 +1,6 @@
 div{
-    background-color: blue;
+    background-color: rgb(153, 164, 199);
+    color:black;
     padding:20px;
 }
 @media(max-width:767px){

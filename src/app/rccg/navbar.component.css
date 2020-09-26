@@ -67,8 +67,7 @@ nav li a.active{
     }
 }
 .nav-link:hover,.nav-link a:hover{
-    color:#ebebeb;
-    background-color:#047ffa;
+    background-color:#c8cbcf;
 }
 
 @media (max-width:767px){
