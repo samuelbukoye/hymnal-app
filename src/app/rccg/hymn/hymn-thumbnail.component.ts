@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { IHymn } from '../shared/hymn';
 
 @Component({
   selector: 'hymn-thumbnail',
@@ -7,6 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 
 export class HymnThumbnailComponent {
-  @Input() hymns:any[];
+  @Input() hymns:IHymn[];
   @Input() grid: boolean;
 }

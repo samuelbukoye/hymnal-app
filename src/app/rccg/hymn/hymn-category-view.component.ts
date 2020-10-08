@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faAngleDoubleDown,faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
+import { IHymn } from '../shared/hymn';
 
 @Component({
   selector: 'hymn-category-view',
@@ -8,7 +9,7 @@ import { faAngleDoubleDown,faAngleDoubleUp } from '@fortawesome/free-solid-svg-i
 })
 
 export class HymnCategoryViewComponent implements OnInit {
-  @Input() hymns:any[];
+  @Input() hymns:IHymn[];
   @Input() grid: boolean
 
   faAngleDoubleDown = faAngleDoubleDown
@@ -46,7 +47,7 @@ export class HymnCategoryViewComponent implements OnInit {
     
   }
 
-  toggleDivision(value){
+  toggleDivision(value: string){
     switch(value){
       case 'worship': this.hymnCategories[0].hidden=!this.hymnCategories[0].hidden;break
       case 'prayer': this.hymnCategories[1].hidden=!this.hymnCategories[1].hidden;break

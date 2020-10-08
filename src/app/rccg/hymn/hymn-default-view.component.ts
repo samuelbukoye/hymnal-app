@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { IHymn } from '../shared/hymn';
 
 @Component({
   selector: 'hymn-default-view',
@@ -9,6 +10,6 @@ import { Component, Input } from '@angular/core';
 })
 
 export class HymnDefaultViewComponent {
-  @Input() hymns:any[];
+  @Input() hymns:IHymn[];
   @Input() grid: boolean
 }

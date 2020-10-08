@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HymnService } from './shared/hymn.service';
 import { faList, faTh, faFilter } from '@fortawesome/free-solid-svg-icons';
+import { IHymn } from './shared/hymn';
 
 @Component({
   selector: 'hymn-list',
@@ -12,15 +13,14 @@ export class HymnListComponent implements OnInit {
   faList = faList
   faTh = faTh
   faFilter=faFilter
+  filteredHymns: IHymn[]
   
   constructor(
     private hymnService : HymnService
-    
     ){}
   ngOnInit(){
     this.hymns = this.hymnService.getHymns()
-    this.filteredHymns=this.hymns
-    
+    this.filteredHymns = this.hymns
   }
   grid:boolean = false 
   category:boolean = false
@@ -33,9 +33,8 @@ export class HymnListComponent implements OnInit {
      this._hymnListFilter = value
      this.filteredHymns = this.hymnListFilter ? this.performFilter(this.hymnListFilter) : this.hymns;
   }
-  hymns
+  hymns: IHymn[]
   
-  filteredHymns : any[] = this.hymns
 
   gridSwitcher(): void {
     this.grid = !this.grid
@@ -48,7 +47,7 @@ export class HymnListComponent implements OnInit {
   performFilter(filterBy: string){
     filterBy = filterBy.toLowerCase()
     
-    const hymnChecker=hymn=>{
+    const hymnChecker=(hymn: string[][])=>{
       return(hymn.some(verse=>{
         return(verse.some(line=>{
           return line.toLowerCase().indexOf(filterBy) !== -1
@@ -56,9 +55,9 @@ export class HymnListComponent implements OnInit {
       }))
     }
 
-    return this.hymns.filter((hymn:any)=>
+    return this.hymns.filter((hymn)=>
         (
-          hymn.title.toLowerCase().indexOf(filterBy)!== -1 || hymn.hymnNo.toString().indexOf(filterBy)!== -1 || hymn.category.toLowerCase().indexOf(filterBy)!== -1 || hymn.metre.toLowerCase().indexOf(filterBy)!== -1 || hymnChecker(hymn.hymnStanzards)
+          hymn.title.toLowerCase().indexOf(filterBy)!== -1 || hymn.hymnNo.toString().indexOf(filterBy)!== -1 || hymn.category.toLowerCase().indexOf(filterBy)!== -1 || hymn.metre.toLowerCase().indexOf(filterBy)!== -1 || hymnChecker(hymn.hymnStanzards) || hymnChecker(hymn.hymnChorus)
         )
       )
   }

@@ -18,7 +18,7 @@
                     {{ lines | firstLetterToUppercase }} <br>
             </span> <br>
             <span *ngIf="hymn.hymnChorus">
-                <span class="chorus" *ngFor="let lines of hymn.hymnChorus[index+1]">
+                <span class="chorus" *ngFor="let lines of hymn.hymnChorus[index]">
                     {{ lines | firstLetterToUppercase }} <br>
                 </span> <br>
             </span>
