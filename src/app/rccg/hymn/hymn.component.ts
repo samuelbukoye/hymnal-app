@@ -18,7 +18,7 @@ export class HymnComponent {
       ){}
   ngOnInit(){
     this.route.params.subscribe(val=> {
-      this.hymn = this.hymnService.getHymn(+val['hymn'])
+      this.hymn = this.hymnService.getHymn(val['hymn'])
     })
   }
 }

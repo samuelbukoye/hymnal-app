@@ -1,11 +1,12 @@
 export interface IHymn{
-    hymnNo: number,
+    hymnNo: string,
     title: string,
     category: string,
-    metre: string,
-    bibleReference: string,
-    bibleReferenceQ: string,
-    hymnToneUrl: string,
     hymnStanzards:string[][],
-    hymnChorus:string[][]
+    hymnChorus:string[]
+}
+export interface ICategory{
+  category: string,
+  hidden: boolean
+  hymns:IHymn[]
 }
