@@ -1,6 +1,6 @@
 <div>
     <div *ngFor="let division of hymnCategories">
-        <h4  (click)="toggleDivision(division.category)">
+        <h4  (click)="toggleDivision(division)">
             <span *ngIf="division.hidden">
                 <fa-icon [icon]='faAngleDoubleDown'></fa-icon>
             </span>

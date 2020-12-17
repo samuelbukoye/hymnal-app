@@ -47,17 +47,23 @@ export class HymnListComponent implements OnInit {
   performFilter(filterBy: string){
     filterBy = filterBy.toLowerCase()
     
-    const hymnChecker=(hymn: string[][])=>{
+    const hymnStanzardChecker=(hymn: string[][])=>{
       return(hymn.some(verse=>{
         return(verse.some(line=>{
           return line.toLowerCase().indexOf(filterBy) !== -1
         }))
       }))
     }
+    const hymnChorusChecker=(chorus: string[])=>{
+      if(!chorus)return false
+      return(chorus.some(line=>{
+        return line.toLowerCase().indexOf(filterBy) !== -1
+      }))
+    }
 
     return this.hymns.filter((hymn)=>
         (
-          hymn.title.toLowerCase().indexOf(filterBy)!== -1 || hymn.hymnNo.toString().indexOf(filterBy)!== -1 || hymn.category.toLowerCase().indexOf(filterBy)!== -1 || hymn.metre.toLowerCase().indexOf(filterBy)!== -1 || hymnChecker(hymn.hymnStanzards) || hymnChecker(hymn.hymnChorus)
+          hymn.title.toLowerCase().indexOf(filterBy)!== -1 || hymn.hymnNo.indexOf(filterBy)!== -1 || hymn.category.toLowerCase().indexOf(filterBy)!== -1 || hymnStanzardChecker(hymn.hymnStanzards) || hymnChorusChecker(hymn.hymnChorus)
         )
       )
   }

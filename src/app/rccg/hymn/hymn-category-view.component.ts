@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faAngleDoubleDown,faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
-import { IHymn } from '../shared/hymn';
+import { IHymn,ICategory } from '../shared/hymn';
 
 @Component({
   selector: 'hymn-category-view',
@@ -14,46 +14,36 @@ export class HymnCategoryViewComponent implements OnInit {
 
   faAngleDoubleDown = faAngleDoubleDown
   faAngleDoubleUp = faAngleDoubleUp
-
-  hymnCategories= [
-    { 
-      category : 'worship',
-      hidden : true,
-      hymns : []
-    },
-    {
-      category : 'prayer',
-      hidden : true,
-      hymns : []
-    },
-    {
-      category : 'praise',
-      hidden : true,
-      hymns : []
-    }
-  ]
+  hymnCategories:ICategory[]= []
   ngOnInit(): void{
-    if(this.hymns)this.sortToCategories()
+    if(this.hymns)this.hymnCategories=this.sortToCategories()
   }
   sortToCategories(){
-    let praise = this.hymns.filter (hymn => hymn.category ==='praise')
-    let prayer = this.hymns.filter (hymn => hymn.category ==='prayer')
-    let worship = this.hymns.filter (hymn => hymn.category ==='worship')
-
-    this.hymnCategories[0].hymns=worship
-    this.hymnCategories[1].hymns=prayer
-    this.hymnCategories[2].hymns=praise
-
-    
-  }
-
-  toggleDivision(value: string){
-    switch(value){
-      case 'worship': this.hymnCategories[0].hidden=!this.hymnCategories[0].hidden;break
-      case 'prayer': this.hymnCategories[1].hidden=!this.hymnCategories[1].hidden;break
-      case 'praise': this.hymnCategories[2].hidden=!this.hymnCategories[2].hidden;break
+    let CategoriesArray:ICategory[]= []
+    for(let hymn of this.hymns){
+      const hymnCategoryChecker=(hymnCategories:ICategory[])=>{
+        return(hymnCategories.find(hymnCategory=>{
+            return hymnCategory.category.toLowerCase().indexOf(hymn.category.toLowerCase()) !== -1
+        }))
+      }
+      let index=hymnCategoryChecker(CategoriesArray)
+      if (!index) {
+        let categoryStructure:ICategory= { 
+          category : '',
+          hidden : false,
+          hymns : []
+        }
+        categoryStructure.category=hymn.category
+        categoryStructure.hymns.push(hymn)
+        CategoriesArray.push(categoryStructure)
+      } else {
+        index.hymns.push(hymn)
+      }
     }
+    return CategoriesArray
   }
 
-
+  toggleDivision(value){
+    value.hidden=!value.hidden
+  }
 }
