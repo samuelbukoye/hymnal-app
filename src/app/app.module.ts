@@ -41,9 +41,7 @@ import { HymnChangeComponent } from './rccg/hymn/hymn-change.component'
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes,{
-      onSameUrlNavigation:'reload'
-    }),
+    RouterModule.forRoot(appRoutes),
     FontAwesomeModule
   ],
   providers: [],
