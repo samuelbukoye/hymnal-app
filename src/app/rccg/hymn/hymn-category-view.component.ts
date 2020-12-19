@@ -30,7 +30,7 @@ export class HymnCategoryViewComponent implements OnInit {
       if (!index) {
         let categoryStructure:ICategory= { 
           category : '',
-          hidden : false,
+          hidden : true,
           hymns : []
         }
         categoryStructure.category=hymn.category
